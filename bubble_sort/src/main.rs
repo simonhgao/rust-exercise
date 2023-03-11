@@ -11,6 +11,9 @@ fn main() {
         .map(|s| s.parse().unwrap())
         .collect();
     let mut nums_copy = nums.clone();
-    sort::bubble_sort(&mut nums_copy); 
-    println!("Sorted array: {:?}", nums_copy);
+    sort::basic_bubble_sort(&mut nums_copy); 
+    println!("Basic Sorted array: {:?}", nums_copy);
+
+    sort::advanced_bubble_sort(&mut nums_copy); 
+    println!("Advanced Sorted array: {:?}", nums_copy);
 }
