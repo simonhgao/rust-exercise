@@ -13,7 +13,7 @@ To run the program, open a terminal window and navigate to the project directory
 bash
 Copy code
 cargo run -- -basic (or --advanced)
-The program will prompt you to enter a list of integers or floats and other types who implement 'PartialOrd', separated by spaces. Once you've entered the list, the program will sort it using the bubble sort algorithm and print the sorted list to the console.
+The program will prompt you to enter a list of integers or string and other types who implement 'PartialOrd', separated by spaces. Once you've entered the list, the program will sort it using the bubble sort algorithm and print the sorted list to the console.
 
 ## Example
 

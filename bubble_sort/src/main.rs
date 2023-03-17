@@ -18,6 +18,7 @@ fn main() {
             println!("Sorted input: {:?}", input);
         }
         "-advanced" => {
+            // we use string for test
             let mut input = read_input::<String>();
             sort::advanced_bubble_sort(&mut input);
             println!("Sorted input: {:?}", input);
