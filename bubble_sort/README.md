@@ -12,19 +12,26 @@ To run the program, open a terminal window and navigate to the project directory
 
 bash
 Copy code
-cargo run
-The program will prompt you to enter a list of integers, separated by spaces. Once you've entered the list, the program will sort it using the bubble sort algorithm and print the sorted list to the console.
+cargo run -- -basic (or --advanced)
+The program will prompt you to enter a list of integers or floats and other types who implement 'PartialOrd', separated by spaces. Once you've entered the list, the program will sort it using the bubble sort algorithm and print the sorted list to the console.
 
 ## Example
 
-Here's an example of how to use the program:
+Here's two example of how to use the program:
 
+-basic
 ```
-$ cargo run
-   Compiling rust-bubble-sort v0.1.0 (/path/to/project)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.44s
-     Running `target/debug/rust-bubble-sort`
-Please enter a list of integers separated by spaces:
-5 2 7 3 9
-Sorted array: [2, 3, 5, 7, 9]
+$ cargo run -- -basic   
+    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
+     Running `target/debug/bubble_sort -basic`
+2 -3 -4 2 100
+Sorted input: [-4, -3, 2, 2, 100]
+```
+-advanced
+```
+$ cargo run -- -advanced
+    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
+     Running `target/debug/bubble_sort -advanced`
+1.0 2.0 5.0 -1.0 0.2
+Sorted input: ["-1.0", "0.2", "1.0", "2.0", "5.0"]
 ```
