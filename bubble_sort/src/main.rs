@@ -1,19 +1,40 @@
-use std::io;
+use std::env;
 mod sort; // import sort mod
 
 fn main() {
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() < 2 {
+        println!("Usage: {} <flag>", args[0]);
+        return;
+    }
+
+    let flag = &args[1];
+
+    match flag.as_str() {
+        "-basic" => {
+            let mut input = read_input::<i32>();
+            sort::basic_bubble_sort(&mut input);
+            println!("Sorted input: {:?}", input);
+        }
+        "-advanced" => {
+            let mut input = read_input::<String>();
+            sort::advanced_bubble_sort(&mut input);
+            println!("Sorted input: {:?}", input);
+        }
+        _ => println!("Unknown flag: {}", flag),
+    }
+}
+
+fn read_input<T: std::str::FromStr>() -> Vec<T>
+where
+    <T as std::str::FromStr>::Err: std::fmt::Debug,
+{
     let mut input = String::new();
-    println!("Please enter a list of integers separated by spaces:");
-    io::stdin().read_line(&mut input).unwrap();
-    let nums: Vec<i32> = input
-        .trim()
+    std::io::stdin().read_line(&mut input).unwrap();
+
+    input
         .split_whitespace()
         .map(|s| s.parse().unwrap())
-        .collect();
-    let mut nums_copy = nums.clone();
-    sort::basic_bubble_sort(&mut nums_copy); 
-    println!("Basic Sorted array: {:?}", nums_copy);
-
-    sort::advanced_bubble_sort(&mut nums_copy); 
-    println!("Advanced Sorted array: {:?}", nums_copy);
+        .collect()
 }
