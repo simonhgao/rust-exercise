@@ -1,0 +1,8 @@
+# Ignore compiled output
+target/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Rust toolchain files
+Cargo.lock
